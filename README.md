@@ -1,43 +1,50 @@
-# Caesar Cipher (CS50)
+# Caesar Cipher
 
-A simple Caesar cipher encryption tool written in C.
+This project is a basic implementation of the Caesar cipher encryption algorithm, developed in C
 
-## 🔍 Description
+## 🔍 Overview
 
-Encrypts user input using a Caesar cipher with a numeric key. Alphabetical characters are shifted while preserving case; non-alphabetical characters remain unchanged.
+The program encrypts a user-provided message by shifting each alphabetical character by a fixed number of positions (the **key**) in the alphabet. It preserves the case of each letter and leaves all non-alphabetical characters unchanged.
 
-## ⚙️ Usage
+## 🛠️ How to Use
 
-### Compile:
-```bash
-make caesar
-```
+1. **Compile the program:**
+   ```bash
+   make caesar
+   ```
 
-### Run:
-```bash
-./caesar <key>
-```
+2. **Run the program with a numeric key:**
+   ```bash
+   ./caesar <key>
+   ```
 
-Example:
-```bash
-./caesar 3
-plaintext: Hello, World!
-ciphertext: Khoor, Zruog!
-```
+   Example:
+   ```bash
+   ./caesar 3
+   plaintext: Hello, World!
+   ciphertext: Khoor, Zruog!
+   ```
 
-## 🚫 Invalid Input
+3. **Invalid input handling:**
+   If the key is missing or contains non-numeric characters, the program displays:
+   ```
+   Usage: ./caesar key
+   ```
 
-If no key or a non-numeric key is provided:
-```
-Usage: ./caesar key
-```
+## 🧠 Functionality
 
-## 🧠 Functions
+- `main()` handles command-line input, prompts the user for plaintext, and performs the encryption.
+- `checker(string a)` verifies that the provided key contains only digits (i.e., is a valid non-negative integer).
 
-- `main()` – Handles input, calls `checker()`, performs encryption.
-- `checker(string a)` – Returns `true` if the key is invalid (i.e., contains letters).
+## ⚠️ Notes
 
-## ✅ Notes
+- Only non-negative integers are supported as keys.
+- The encryption wraps around the alphabet using modulo 26 arithmetic.
+- Non-alphabetic characters (such as punctuation and numbers) are not modified.
 
-- Only supports non-negative integers as keys.
-- Shifts wrap using modulo 26.
+## 📄 License
+
+This code is released for educational purposes and may be freely used or modified with attribution.
+
+
+
